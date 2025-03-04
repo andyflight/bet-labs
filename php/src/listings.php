@@ -23,6 +23,8 @@ require_once "header.php";
         if (isset($_GET['listing'])) {
             $listing_id = mysqli_real_escape_string($conn, $_GET['listing']);
 
+            echo $_GET['listing'];
+
             $details_query = "
                 SELECT 
                     l.description, 

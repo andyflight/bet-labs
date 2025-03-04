@@ -1,0 +1,5 @@
+<FilesMatch ".*">
+    Require all denied
+</FilesMatch>
+
+ErrorDocument 403 /403.html
