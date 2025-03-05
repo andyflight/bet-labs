@@ -44,6 +44,14 @@
             $user_id = $_POST['user_id'] ?? '';
             $address_id = $_POST['address_id'] ?? '';
             $listing_type_id = $_POST['listing_type_id'] ?? '';
+
+            echo $user_id;
+
+            echo "<br/>";
+
+            echo $address_id;
+
+
         
             if ($description && $room_count && $area && $price && $listing_date && $user_id && $address_id && $listing_type_id) {
                 $stmt = $conn->prepare("INSERT INTO Listings (id, description, room_count, area, price, listing_date, user_id, adress_id, listing_type_id) VALUES (UUID(), ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -93,7 +101,7 @@
                 <label for="user_id">Користувач</label>
                 <select name="user_id" id="user_id" required>
                     <option value="">-- Виберіть користувача --</option>
-                    <?php foreach ($address_ids as $id): ?>
+                    <?php foreach ($user_ids as $id): ?>
                         <option value="<?= $id ?>"><?= $id ?></option>
                     <?php endforeach; ?>
                 </select>
@@ -111,7 +119,7 @@
                 <label for="listing_type_id">Тип оголошення</label>
                 <select name="listing_type_id" id="listing_type_id" required>
                 <option value="">-- Виберіть тип оголошення --</option>
-                    <?php foreach ($address_ids as $id): ?>
+                    <?php foreach ($listing_type_ids as $id): ?>
                         <option value="<?= $id ?>"><?= $id ?></option>
                     <?php endforeach; ?>
                 </select>
