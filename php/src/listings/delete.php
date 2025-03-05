@@ -1,26 +1,22 @@
-<?php
-
-require_once "db_config.php";
-require_once "header.php";
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Delete</title>
-        <link rel="stylesheet" href="styles.css">
-
-    </head>
-
-    <body>
+<body>
     <?php
 
+    $listing_id = mysqli_real_escape_string($conn, $id);
 
+    $query = "
+    DELETE FROM Listings 
+    WHERE id='$listing_id'
+    ";
+
+    if (mysqli_query($conn, $query)) {
+        echo "Listing with id $id was successfully deleted!";
+    } else {
+        echo "Oopss.. Something went wrong, please try again ...";
+    }
 
     ?>
+        <a href="listings.php">Go back to Listings</a>
     </body>
 </html>
