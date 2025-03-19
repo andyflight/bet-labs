@@ -1,25 +1,21 @@
 <?php
-
 require_once "db_config.php";
 require_once "header.php";
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Listings</title>
-        <link rel="stylesheet" href="styles.css">
 
-    </head>
-    <body>
-
-        <div class="container">
         <?php
-
         $action = $_GET['action'] ?? null;
         $id = $_GET['id'] ?? null;
 
@@ -32,20 +28,16 @@ require_once "header.php";
         }
 
         switch ($action) {
-
             case 'create':
                 require_once 'listings/create.php';
                 break;
-            
             case 'edit':
                 if ($id) {
                     require_once 'listings/edit.php';
                 } else {
-
                     echo "Invalid ID";
                 }
                 break;
-
             case 'delete':
                 if ($id) {
                     require_once 'listings/delete.php';
@@ -53,7 +45,6 @@ require_once "header.php";
                     echo "Invalid ID";
                 }
                 break;
-
             default:
                 if ($id) {
                     require_once 'listings/view.php';
@@ -62,10 +53,7 @@ require_once "header.php";
                 }
                 break;
         }
-
         ?>
     </div>
-    </body>
+</body>
 </html>
-
-
