@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
+
+<h2>Пошук оголошень</h2>
+        <form method="GET" action="listings.php">
+            <input type="text" name="keyword" placeholder="Ключове слово">
+            <select name="field">
+                <option value="description">Опис</option>
+                <option value="city">Місто</option>
+                <option value="street">Вулиця</option>
+                <option value="price">Ціна</option>
+                <option value="listing_date">Дата оголошення</option>
+            </select>
+            <input type="text" name="min" placeholder="Мін. значення">
+            <input type="text" name="max" placeholder="Макс. значення">
+            <button type="submit">Пошук</button>
+        </form>
 <?php
 $sort_column = isset($_GET['sort']) ? $_GET['sort'] : 'listing_date';
 $sort_order = isset($_GET['order']) && $_GET['order'] === 'desc' ? 'DESC' : 'ASC';
