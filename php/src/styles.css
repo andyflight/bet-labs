@@ -77,7 +77,57 @@ body {
     text-decoration: underline;
 }
 
-/* Listing details */
+.listings-table th a {
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    padding-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.listings-table th a:hover {
+    color: #3498db;
+}
+
+.listings-table th a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.listings-table th a[href*="order=asc"]::after {
+    border-bottom: 5px solid #ffffff;
+    transform: translateY(-25%);
+}
+
+.listings-table th a[href*="order=desc"]::after {
+    border-top: 5px solid #ffffff;
+    transform: translateY(25%);
+}
+
+.listings-table th a:hover::after {
+    border-color: transparent transparent #3498db transparent; 
+}
+
+.listings-table th a[href*="order=desc"]:hover::after {
+    border-color: #3498db transparent transparent transparent; 
+}
+
+.listings-table td a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.listings-table td a:hover {
+    text-decoration: underline;
+}
+
 .listing-details {
     background: white;
     padding: 20px;
@@ -110,9 +160,91 @@ body {
     background: #3a3a3a;
 }
 
-/* Error messages */
 .error-message {
     color: red;
     font-weight: bold;
     text-align: center;
 }
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary {
+    background: #007BFF;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+.styled-button {
+    margin-top: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.styled-button:hover {
+    background-color: #504f4f;
+}
+
