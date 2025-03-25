@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Weather</h1>
+    <% if (weather) { %>
+      <div class="weather-card">
+        <h2><%= weather.name %></h2>
+        <p class="temperature"><%= weather.main.temp %> °C</p>
+        <p class="description"><%= weather.weather[0].description %></p>
+        <img src="http://openweathermap.org/img/wn/<%= weather.weather[0].icon %>@2x.png" alt="Weather icon">
+      </div>
+    <% } else { %>
+      <p>Loading weather data...</p>
+    <% } %>
+    <a href="/" class="back-button">Back to Home</a>
+  </div>
+</body>
+</html>

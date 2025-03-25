@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Weather App</h1>
+    <div class="cities">
+      <button class="city-button" onclick="window.location.href='/weather/Kyiv'">Kyiv</button>
+      <button class="city-button" onclick="window.location.href='/weather/Lviv'">Lviv</button>
+      <button class="city-button" onclick="window.location.href='/weather/Kharkiv'">Kharkiv</button>
+      <button class="city-button" onclick="window.location.href='/weather/Odesa'">Odesa</button>
+    </div>
+    <button id="current-location" class="location-button">Get Weather for My Location</button>
+  </div>
+
+  <script>
+    document.getElementById('current-location').addEventListener('click', () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          window.location.href = `/weather?lat=${lat}&lon=${lon}`;
+        }, () => {
+          alert('Unable to retrieve your location.');
+        });
+      } else {
+        alert('Geolocation is not supported by this browser.');
+      }
+    });
+  </script>
+</body>
+</html>

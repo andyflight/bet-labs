@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #80deea);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+  }
+  
+  .container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #007bff;
+  }
+  
+  .cities {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    margin-bottom: 30px;
+  }
+  .city-button, .location-button {
+    width: 350px; 
+    padding: 15px 30px; 
+    margin: 10px 0;
+    border: none; 
+    border-radius: 50px;
+    cursor: pointer; 
+    font-size: 1.2rem; 
+    transition: all 0.3s ease; 
+    color: white; 
+  }
+  
+  .city-button {
+    background-color: #6c757d; 
+  }
+  
+  .city-button:hover {
+    background-color: #5a6268; 
+    transform: scale(1.05); 
+  }
+  
+  .location-button {
+    background-color: #17a2b8; 
+     margin-top: 0px; 
+  }
+  
+  .location-button:hover {
+    background-color: #138496; 
+    transform: scale(1.05); 
+  }
+
+  .weather-card {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+  }
+  
+  .weather-card h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 15px;
+  }
+  
+  .temperature {
+    font-size: 3rem;
+    font-weight:ble;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    font-size: 1.5rem;
+    color: #6c757d;
+    text-transform: capitalize;
+  }
+  
+  img {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+  }
+  
+  .back-button {
+    display: inline-block;
+    margin-top: 30px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .city-button, .location-button {
+      padding: 12px 25px;
+      font-size: 1rem;
+    }
+  
+    .weather-card h2 {
+      font-size: 1.5rem;
+    }
+  
+    .temperature {
+      font-size: 2.5rem;
+    }
+  
+    .description {
+      font-size: 1.2rem;
+    }
+  
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
