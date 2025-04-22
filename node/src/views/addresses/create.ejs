@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head><meta charset="UTF-8"><title>Додати адресу</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+    <nav>
+        <ul>
+          <li><a onclick="history.back()">Назад</a></li>
+          <li><a href="/">Головна</a></li>
+        </ul>
+      </nav>
+  <h1>Додати адресу</h1>
+  <form action="/addresses/create" method="post">
+    <label>Вулиця:<input type="text" name="street" required></label>
+    <label>Будинок:<input type="text" name="building_number" required></label>
+    <label>Квартира:<input type="text" name="flat_number"></label>
+    <label>Місто:<input type="text" name="city" required></label>
+    <label>Країна:<input type="text" name="country" required></label>
+    <button type="submit">Додати</button>
+  </form>
+</body>
+</html>

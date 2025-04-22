@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head><meta charset="UTF-8"><title>Створити оголошення</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+    <nav>
+        <ul>
+          <li><a onclick="history.back()">Назад</a></li>
+          <li><a href="/">Головна</a></li>
+        </ul>
+      </nav>
+  <h1>Створити оголошення</h1>
+  <form action="/listings/create" method="post">
+    <label>Тип:<select name="type">
+      <option value="здам">здам</option><option value="продам">продам</option>
+      <option value="зніму">зніму</option><option value="куплю">куплю</option>
+    </select></label>
+    <label>Адреса:<select name="address">
+      <% addresses.forEach(a=>{ %><option value="<%=a._id%>"><%=`${a.street}, ${a.building_number}`%></option><% }) %>
+    </select></label>
+    <label>Кімнат:<input type="number" name="rooms" required></label>
+    <label>Ціна:<input type="number" name="price" required></label>
+    <label>Власник:<select name="owner">
+      <% owners.forEach(o=>{ %><option value="<%=o._id%>"><%=o.name%></option><% }) %>
+    </select></label>
+    <button type="submit">Створити</button>
+  </form>
+</body>
+</html>

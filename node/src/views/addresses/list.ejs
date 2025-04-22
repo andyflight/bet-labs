@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head><meta charset="UTF-8"><title>Адреси</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+    <nav>
+        <ul>
+          <li><a onclick="history.back()">Назад</a></li>
+          <li><a href="/">Головна</a></li>
+        </ul>
+      </nav>
+  <h1>Список адрес</h1>
+  <a href="/addresses/create">Додати адресу</a>
+  <table>
+    <thead><tr><th>Вулиця</th><th>Буд.</th><th>Кв.</th><th>Місто</th><th>Країна</th><th>Дії</th></tr></thead>
+    <tbody>
+      <% addresses.forEach(a=>{ %>
+        <tr>
+          <td><%=a.street%></td><td><%=a.building_number%></td><td><%=a.flat_number||'-'%></td><td><%=a.city%></td><td><%=a.country%></td>
+          <td>
+            <a href="/addresses/edit/<%=a._id%>">Редагувати</a>
+            <form action="/addresses/delete/<%=a._id%>" method="post" style="display:inline;"><button type="submit">Видалити</button></form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
