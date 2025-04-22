@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head><meta charset="UTF-8"><title>Редагувати адресу</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+    <nav>
+        <ul>
+          <li><a onclick="history.back()">Назад</a></li>
+          <li><a href="/">Головна</a></li>
+        </ul>
+      </nav>
+  <h1>Редагувати адресу</h1>
+  <form action="/addresses/edit/<%=address._id%>" method="post">
+    <label>Вулиця:<input type="text" name="street" value="<%=address.street%>" required></label>
+    <label>Будинок:<input type="text" name="building_number" value="<%=address.building_number%>" required></label>
+    <label>Квартира:<input type="text" name="flat_number" value="<%=address.flat_number%>"></label>
+    <label>Місто:<input type="text" name="city" value="<%=address.city%>" required></label>
+    <label>Країна:<input type="text" name="country" value="<%=address.country%>" required></label>
+    <button type="submit">Зберегти</button>
+  </form>
+</body>
+</html>

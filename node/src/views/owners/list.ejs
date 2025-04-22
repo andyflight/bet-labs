@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head><meta charset="UTF-8"><title>Власники</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+    <nav>
+        <ul>
+          <li><a onclick="history.back()">Назад</a></li>
+          <li><a href="/">Головна</a></li>
+        </ul>
+      </nav>
+  <h1>Список власників</h1>
+  <a href="/owners/create">Створити нового</a>
+  <table>
+    <thead><tr><th>Ім'я</th><th>Email</th><th>Дії</th></tr></thead>
+    <tbody>
+      <% owners.forEach(o=>{ %>
+        <tr>
+          <td><%=o.name%></td><td><%=o.email%></td>
+          <td>
+            <a href="/owners/edit/<%=o._id%>">Редагувати</a>
+            <form action="/owners/delete/<%=o._id%>" method="post" style="display:inline;"><button type="submit">Видалити</button></form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>

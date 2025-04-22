@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head><meta charset="UTF-8"><title>Створити власника</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+    <nav>
+        <ul>
+          <li><a onclick="history.back()">Назад</a></li>
+          <li><a href="/">Головна</a></li>
+        </ul>
+      </nav>
+  <h1>Створити власника</h1>
+  <form action="/owners/create" method="post">
+    <label>Ім'я:<input type="text" name="name" required></label>
+    <label>Email:<input type="email" name="email" required></label>
+    <button type="submit">Створити</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head><meta charset="UTF-8"><title>Редагувати оголошення</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+    <nav>
+        <ul>
+          <li><a onclick="history.back()">Назад</a></li>
+          <li><a href="/">Головна</a></li>
+        </ul>
+      </nav>
+  <h1>Редагувати оголошення</h1>
+  <form action="/listings/edit/<%=listing._id%>" method="post">
+    <label>Тип:<select name="type">
+      <% ['здам','продам','зніму','куплю'].forEach(v=>{ %>
+        <option value="<%=v%>" <%=listing.type===v?'selected':''%>><%=v%></option>
+      <% }) %>
+    </select></label>
+    <label>Адреса:<select name="address">
+      <% addresses.forEach(a=>{ %>
+        <option value="<%=a._id%>" <%=a._id.equals(listing.address._id)?'selected':''%>><%=`${a.street}, ${a.building_number}`%></option>
+      <% }) %>
+    </select></label>
+    <label>Кімнат:<input type="number" name="rooms" value="<%=listing.rooms%>" required></label>
+    <label>Ціна:<input type="number" name="price" value="<%=listing.price%>" required></label>
+    <label>Власник:<select name="owner">
+      <% owners.forEach(o=>{ %>
+        <option value="<%=o._id%>" <%=o._id.equals(listing.owner._id)?'selected':''%>><%=o.name%></option>
+      <% }) %>
+    </select></label>
+    <button type="submit">Зберегти</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,11 @@
+body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; color: #333; }
+h1 { margin-bottom: 20px; }
+nav ul { list-style: none; padding: 0; display: flex; gap: 10px; }
+nav a { text-decoration: none; padding: 8px 12px; border-radius: 4px; background: #fff; border: 1px solid #ddd; }
+a:hover { background: #eee; }
+table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+th, td { padding: 8px; border: 1px solid #ddd; text-align: left; }
+form label { display: block; margin: 10px 0; }
+input, select, button { padding: 6px; font-size: 1em; }
+button { cursor: pointer; border: none; border-radius: 4px; background: #007bff; color: #fff; }
+button:hover { background: #0056b3; }

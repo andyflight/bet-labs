@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head><meta charset="UTF-8"><title>Редагувати власника</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+    <nav>
+        <ul>
+          <li><a onclick="history.back()">Назад</a></li>
+          <li><a href="/">Головна</a></li>
+        </ul>
+      </nav>
+  <h1>Редагувати власника</h1>
+  <form action="/owners/edit/<%=owner._id%>" method="post">
+    <label>Ім'я:<input type="text" name="name" value="<%=owner.name%>" required></label>
+    <label>Email:<input type="email" name="email" value="<%=owner.email%>" required></label>
+    <button type="submit">Зберегти</button>
+  </form>
+</body>
+</html>
